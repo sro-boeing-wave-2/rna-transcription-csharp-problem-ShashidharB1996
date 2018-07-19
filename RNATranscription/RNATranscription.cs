@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RNATranscriptionModule
 {
@@ -6,7 +7,14 @@ namespace RNATranscriptionModule
     {
         public static string ToRna(string nucleotide)
         {
-            throw new NotImplementedException("You need to implement this function.");
+            string output = "";
+            Dictionary<char, char> DnaRnadict = new Dictionary<char, char>(){ {'G','C'}, {'C', 'G'}, {'T','A'}, {'A','U'} };
+            for(int i=0; i< nucleotide.Length; i+=1)
+            {
+                output += DnaRnadict[nucleotide[i]];
+            }
+            return output;
+            //throw new NotImplementedException("You need to implement this function.");
         }
     }
 }
